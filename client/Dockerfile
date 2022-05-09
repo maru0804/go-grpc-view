@@ -1,6 +1,7 @@
-FROM  node:lts-slim
-
+FROM node:14.15.0-alpine
 WORKDIR /client
-
 COPY . .
-RUN npm install
+RUN apk update 
+RUN npm install 
+RUN npm install -g npm
+CMD [ "/bin/sh" ]
